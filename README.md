@@ -1,7 +1,7 @@
 ## welcome
 
--   composer update
--   php artisan migrate:fresh --seed
+1.  composer update
+2.  php artisan migrate:fresh --seed
 
 ## feature
 
