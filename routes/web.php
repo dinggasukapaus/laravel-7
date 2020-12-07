@@ -15,7 +15,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+    //! memberi role
+    // auth()->user()->assignRole('user');
+    //! cek role
+    // if (auth()->user()->hasRole('user')) {
+    //     return 'hai admin';
+    // }else{
+    //     return 'hai user';
+    // }
 });
 
 //? auth()->user()->assignRole('admin');
@@ -23,3 +31,15 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//! admin
+Route::group(['middleware' => ['role:admin']], function () {
+    Route::get('admin','AdminController@index')->name('admin.index');
+
+});
+
+//! user
+Route::group(['middleware' => ['role:user']], function () {
+    Route::get('user','UserController@index')->name('user.index');
+
+});
