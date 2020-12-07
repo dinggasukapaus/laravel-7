@@ -19,13 +19,12 @@ class UserTableSeeder extends Seeder
         ]);
         //! memberi user'admin' role admin
         $admin->assignRole('admin');
-        //! memberi user 'user' role user
         $user = User::create([
             'name' => 'user',
             'email' => 'user@gmail.com',
             'password' => bcrypt(123456)
         ]);
-        //! memberi user'admin' role admin
-        $admin->assignRole('user');
+        //! memberi user'user' role user
+        $user->assignRole('user');
     }
 }

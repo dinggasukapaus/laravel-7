@@ -51,7 +51,7 @@
                             @else
                             @role('admin')
                             <li class="nav-item">
-                                <a class="nav-link" href="{{route('admin.index')}}">admin panel</a>
+                                <a class="nav-link" href="#">admin panel</a>
                             </li>
                             @endrole
                             <li class="nav-item dropdown">
